@@ -20,8 +20,8 @@ class StackTech(models.Model):
 
 class Supervisors(models.Model):
     id_sup = models.AutoField(primary_key = True)
+    surname_sup = models.CharField(max_length=30, null=False)
     name_sup = models.CharField(max_length=30,null=False)
-    surname_sup = models.CharField(max_length=30,null=False)
     secondname_sup = models.CharField(max_length=30,null=False)
     age_sup = models.IntegerField(null=False)
     date_of_birth_sup = models.DateField(null=False)
@@ -31,7 +31,7 @@ class Participants(models.Model):
     id_p = models.AutoField(primary_key = True)
     surname_p = models.CharField(max_length=30,null=False)
     name_p = models.CharField(max_length=30,null=False)
-    secondname_p = models.CharField(max_length=30)
+    secondname_p = models.CharField(max_length=30, null=True)
     age_p = models.IntegerField(null=False)
     date_of_birth_p = models.DateField(null=False)
     team = models.ForeignKey(Teams, on_delete=models.CASCADE)
