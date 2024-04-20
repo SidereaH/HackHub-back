@@ -7,3 +7,4 @@ Front-end
 2. CSS
 3. JavaScript (ReactJS)
 
+--git checkout branch
