@@ -7,6 +7,7 @@ class Teams(models.Model):
     login_t = models.CharField(max_length=40,null=False)
     password_t = models.CharField(max_length=100,null=False)
 
+
     def __str__(self):
         return f'{self.id_t} {self.name_t} '
 
@@ -50,7 +51,7 @@ class Participants(models.Model):
     supervisor = models.ForeignKey(Supervisors, null=True, on_delete=models.SET_NULL)
     contacts = models.ForeignKey(ContactsPortfolio, on_delete=models.CASCADE)
     stack_tech = models.ForeignKey(StackTech, on_delete=models.CASCADE)
-
+    capitan = models.BooleanField(null=False, default=False)
     def __str__(self):
-        return f'{self.pk} {self.surname_p} {self.name_p} '
+        return f'{self.pk} {self.surname_p} {self.name_p}'
 

@@ -1,10 +1,7 @@
 from django.contrib import admin
 
-from hackapp.models import Participants
-from hackapp.models import Supervisors
-from hackapp.models import StackTech
-from hackapp.models import ContactsPortfolio
-from hackapp.models import Teams
+from hackapp.models import Participants, Supervisors, StackTech, ContactsPortfolio, Teams
+
 
 
 admin.site.register(Participants)
