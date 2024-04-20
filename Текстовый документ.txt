@@ -1,0 +1,9 @@
+Back-end
+1. API- django
+2. DB - ready postgresql
+3. Cash redis/memcashed
+Front-end 
+1. HTML
+2. CSS
+3. JavaScript (ReactJS)
+
