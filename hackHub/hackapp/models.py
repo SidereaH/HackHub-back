@@ -7,6 +7,9 @@ class Teams(models.Model):
     login_t = models.CharField(max_length=40,null=False)
     password_t = models.CharField(max_length=100,null=False)
 
+    def __str__(self):
+        return f'{self.id_t} {self.name_t} '
+
 
 class ContactsPortfolio(models.Model):
     id = models.AutoField(primary_key=True, null=False)
@@ -14,9 +17,15 @@ class ContactsPortfolio(models.Model):
     git_hub_link = models.CharField(max_length=50, null=False)
     cv = models.TextField()
 
+    def __str__(self):
+        return f'{self.pk} {self.telegram} '
+
 class StackTech(models.Model):
     id_st = models.AutoField(primary_key = True)
     stack = models.TextField(null=False)
+
+    def __str__(self):
+        return f'{self.pk} {self.stack}'
 
 class Supervisors(models.Model):
     id_sup = models.AutoField(primary_key = True)
@@ -27,6 +36,9 @@ class Supervisors(models.Model):
     date_of_birth_sup = models.DateField(null=False)
     teams_sup = models.ForeignKey(Teams, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'{self.pk} {self.surname_sup} {self.name_sup} '
+
 class Participants(models.Model):
     id_p = models.AutoField(primary_key = True)
     surname_p = models.CharField(max_length=30,null=False)
@@ -35,7 +47,10 @@ class Participants(models.Model):
     age_p = models.IntegerField(null=False)
     date_of_birth_p = models.DateField(null=False)
     team = models.ForeignKey(Teams, on_delete=models.CASCADE)
-    supervisor = models.ForeignKey(Supervisors, on_delete=models.CASCADE)
+    supervisor = models.ForeignKey(Supervisors, null=True, on_delete=models.SET_NULL)
     contacts = models.ForeignKey(ContactsPortfolio, on_delete=models.CASCADE)
     stack_tech = models.ForeignKey(StackTech, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.pk} {self.surname_p} {self.name_p} '
 
