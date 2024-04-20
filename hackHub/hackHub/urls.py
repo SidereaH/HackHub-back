@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from hackapp.views import SliderView
+from hackapp.views import MainView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', SliderView.as_view())
+    path('', MainView.as_view())
 
 ]
